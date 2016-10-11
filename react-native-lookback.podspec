@@ -13,6 +13,5 @@ Pod::Spec.new do |s|
   s.source = { git: package.dig(:repository, :url) }
   s.source_files = "ios/*.{h,m}"
   s.platform = :ios, "8.0"
-  s.frameworks = ["Lookback"]
   s.dependency "Lookback", "1.4.1"
 end
