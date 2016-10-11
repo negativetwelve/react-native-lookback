@@ -1,0 +1,24 @@
+{
+  "name": "react-native-lookback",
+  "version": "0.1.0",
+  "description": "React Native wrapper for Lookback.io.",
+  "main": "./src/Lookgback.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negativetwelve/react-native-lookback.git"
+  },
+  "author": "Mark Miyashita",
+  "contributors": [
+    {
+      "name": "Mark Miyashita",
+      "email": "negativetwelve@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/negativetwelve/react-native-lookback/issues"
+  },
+  "homepage": "https://github.com/negativetwelve/react-native-lookback",
+  "dependencies": {
+  }
+}
