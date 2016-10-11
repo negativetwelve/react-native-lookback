@@ -14,5 +14,4 @@ Pod::Spec.new do |s|
   s.source_files = "ios/*"
   s.platform = :ios, "8.0"
   s.dependency "Lookback", "1.4.1"
-  s.vendored_frameworks = "Lookback.framework"
 end
