@@ -23,8 +23,17 @@ RCT_EXPORT_METHOD(startWithAppToken:(NSString *)appToken) {
   [Lookback setupWithAppToken:appToken];
 }
 
-RCT_EXPORT_METHOD(startRecordingWithOptions:(LookbackRecordingOptions*)options) {
-  [[Lookback sharedLookback] startRecordingWithOptions:options];
+RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
+  NSLog(@"startRecording with %@", options);
+
+  NSString *userId = [RCTConvert NSString:options[@"userId"]];
+  BOOL microphoneEnabled = [RCTConvert BOOL:options[@"microphoneEnabled"]];
+
+  LookbackRecordingOptions *recordingOptions = [LookbackRecordingOptions init];
+  recordingOptions.userIdentifier = userId;
+  recordingOptions.microphoneEnabled = microphoneEnabled;
+
+  [[Lookback sharedLookback] startRecordingWithOptions:recordingOptions];
 }
 
 RCT_EXPORT_METHOD(stopRecording) {
