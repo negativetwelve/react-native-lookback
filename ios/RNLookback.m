@@ -37,6 +37,7 @@ RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
   recordingOptions.microphoneEnabled = microphoneEnabled;
 
   if (skipPreview) {
+    // If skipPreview is true then we upload the recording immediately.
     recordingOptions.afterRecording = LookbackAfterRecordingUpload;
   }
 
