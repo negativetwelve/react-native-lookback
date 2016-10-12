@@ -19,7 +19,7 @@ react-native link react-native-lookback
 
 #### Cocoapods
 
-TODO(mark): When adding `react-native-lookback` to cooapods and referencing `node_modules`, the package can't find the header files for Lookback itself :( If anyone knows how to fix this, I would gladly accept your PR!
+TODO(mark): When adding `react-native-lookback` to Cocoapods and referencing `node_modules`, the package can't find the header files for Lookback itself :( If anyone knows how to fix this, I would gladly accept your PR!
 
 Add the following to your Podfile:
 
@@ -29,7 +29,7 @@ pod "Lookback"
 
 #### Manual
 
-Inside your xcode project file, right click on your "Libraries" folder and select "Add files to <app>". Navigate to `node_modules/react-native-lookback/ios/RNLookback.xcodeproj` and add that to your project. Then select your app's project file on the sidebar, scroll down to "Linked Frameworks and Libraries" and add `libRNLookback.a` to this list.
+Inside your xcode project file, right click on your "Libraries" folder and select "Add files to MyApp". Navigate to `node_modules/react-native-lookback/ios/RNLookback.xcodeproj` and add that to your project. Then select your app's project file on the sidebar, scroll down to "Linked Frameworks and Libraries" and add `libRNLookback.a` to this list.
 
 ### Android
 
@@ -52,6 +52,7 @@ Lookback.startRecordingWithOptions({
   // cameraEnabled: false, // When true, will record the user using the front facing camera.
   // microphoneEnabled: false, // When true, will record audio with the recording.
 });
+```
 
 Stop Recording:
 
