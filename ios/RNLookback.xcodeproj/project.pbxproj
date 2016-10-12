@@ -211,7 +211,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../../ios/**",
-					"$(SRCROOT)/../../../apps/**",
+					"$(SRCROOT)/../../../apps/student/clients/ios/**",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -232,7 +232,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../../ios/**",
-					"$(SRCROOT)/../../../apps/**",
+					"$(SRCROOT)/../../../apps/student/clients/ios/**",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
