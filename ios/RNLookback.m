@@ -16,7 +16,7 @@
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(startWithAppToken:(NSString *)appToken) {
-  [LookBack setupWithAppToken:appToken];
+  [Lookback setupWithAppToken:appToken];
 }
 
 @end
