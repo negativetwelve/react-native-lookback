@@ -6,7 +6,7 @@ React Native wrapper for [Lookback](https://lookback.io/).
 ## Setup
 
 ```
-npm install --save react-native-lookback@1.0.0
+npm install --save react-native-lookback
 ```
 
 ### iOS
@@ -17,15 +17,25 @@ npm install --save react-native-lookback@1.0.0
 react-native link react-native-lookback
 ```
 
-#### Cocoapods
+Unfortunately, after running the `react-native link` command, you will also need to add the Lookback pod by following the instructions in the Cocoapods section. I'm working on making `react-native link` a one-stop solution, PRs welcome!
 
-TODO(mark): When adding `react-native-lookback` to Cocoapods and referencing `node_modules`, the package can't find the header files for Lookback itself :( If anyone knows how to fix this, I would gladly accept your PR!
+#### Cocoapods
 
 Add the following to your Podfile:
 
 ```
 pod "Lookback"
 ```
+
+Then run:
+
+```
+pod install
+```
+
+You're done! :tada:
+
+TODO(mark): When adding `react-native-lookback` to Cocoapods and referencing `node_modules`, the package can't find the header files for Lookback itself :( If anyone knows how to fix this, I would gladly accept your PR!
 
 #### Manual
 
@@ -47,10 +57,9 @@ Start Recording:
 
 ```
 Lookback.startRecordingWithOptions({
-  // Options:
-  // showPreview: false, // When true, will show the Lookback interface for the user to watch / upload the recording.
-  // cameraEnabled: false, // When true, will record the user using the front facing camera.
-  // microphoneEnabled: false, // When true, will record audio with the recording.
+  showPreview: true, // When true, will show the Lookback interface for the user to watch / upload the recording.
+  cameraEnabled: true, // When true, will record the user using the front facing camera.
+  microphoneEnabled: true, // When true, will record audio with the recording.
 });
 ```
 
