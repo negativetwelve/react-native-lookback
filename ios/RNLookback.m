@@ -61,11 +61,12 @@ RCT_EXPORT_METHOD(stopRecording) {
   [[Lookback sharedLookback] stopRecording];
 }
 
+// NOTE(mark): This currently doesn't have a nice way of closing it. Need to add a done / back button to the view itself.
 RCT_EXPORT_METHOD(showLookbackUploads) {
   UIViewController *recordings = [LookbackRecordingsTableViewController recordingsViewController];
   UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
 
-  [rootViewController.navigationController pushViewController:recordings animated:YES];
+  [rootViewController presentViewController:recordings animated:YES completion:NULL];
 }
 
 RCT_EXPORT_METHOD(enteredView:(NSString *)view) {
