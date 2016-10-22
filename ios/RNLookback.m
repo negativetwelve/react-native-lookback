@@ -36,17 +36,16 @@ RCT_EXPORT_METHOD(setShowIntroductionDialogs:(BOOL *)showIntroductionDialogs) {
 }
 
 RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
-  NSString *userIdentifier = [RCTConvert NSString:options[@"userIdentifier"]];
-
   BOOL cameraEnabled = [RCTConvert BOOL:options[@"cameraEnabled"]];
   BOOL microphoneEnabled = [RCTConvert BOOL:options[@"microphoneEnabled"]];
   NSString *name = [RCTConvert NSString:options[@"name"]];
   BOOL skipPreview = [RCTConvert BOOL:options[@"skipPreview"]];
+  NSString *userIdentifier = [RCTConvert NSString:options[@"userIdentifier"]];
 
   LookbackRecordingOptions *recordingOptions = [LookbackRecordingOptions new];
-  recordingOptions.userIdentifier = userIdentifier;
   recordingOptions.cameraEnabled = cameraEnabled;
   recordingOptions.microphoneEnabled = microphoneEnabled;
+  recordingOptions.userIdentifier = userIdentifier;
 
   if (skipPreview) {
     // If skipPreview is true then we upload the recording immediately.
