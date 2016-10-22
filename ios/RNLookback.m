@@ -23,6 +23,14 @@ RCT_EXPORT_METHOD(startWithAppToken:(NSString *)appToken) {
   [Lookback setupWithAppToken:appToken];
 }
 
+RCT_EXPORT_METHOD(setShakeToRecord:(BOOL *)shakeToRecord) {
+  [Lookback sharedLookback].shakeToRecord = shakeToRecord;
+}
+
+RCT_EXPORT_METHOD(setShowIntroductionDialogs:(BOOL *)showIntroductionDialogs) {
+  [Lookback sharedLookback].showIntroductionDialogs = showIntroductionDialogs;
+}
+
 RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
   NSString *userId = [RCTConvert NSString:options[@"userId"]];
 
@@ -47,10 +55,6 @@ RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
 
 RCT_EXPORT_METHOD(stopRecording) {
   [[Lookback sharedLookback] stopRecording];
-}
-
-RCT_EXPORT_METHOD(setShakeToRecord:(BOOL *)shakeToRecord) {
-  [Lookback sharedLookback].shakeToRecord = shakeToRecord;
 }
 
 RCT_EXPORT_METHOD(enteredView:(NSString *)view) {
