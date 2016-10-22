@@ -36,7 +36,7 @@ RCT_EXPORT_METHOD(setShowIntroductionDialogs:(BOOL *)showIntroductionDialogs) {
 }
 
 RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
-  NSString *userId = [RCTConvert NSString:options[@"userId"]];
+  NSString *userIdentifier = [RCTConvert NSString:options[@"userIdentifier"]];
 
   BOOL cameraEnabled = [RCTConvert BOOL:options[@"cameraEnabled"]];
   BOOL microphoneEnabled = [RCTConvert BOOL:options[@"microphoneEnabled"]];
@@ -44,7 +44,7 @@ RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
   BOOL skipPreview = [RCTConvert BOOL:options[@"skipPreview"]];
 
   LookbackRecordingOptions *recordingOptions = [LookbackRecordingOptions new];
-  recordingOptions.userIdentifier = userId;
+  recordingOptions.userIdentifier = userIdentifier;
   recordingOptions.cameraEnabled = cameraEnabled;
   recordingOptions.microphoneEnabled = microphoneEnabled;
 
@@ -59,6 +59,13 @@ RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
 
 RCT_EXPORT_METHOD(stopRecording) {
   [[Lookback sharedLookback] stopRecording];
+}
+
+RCT_EXPORT_METHOD(showLookbackUploads) {
+  UIViewController *recordings = [LookbackRecordingsTableViewController recordingsViewController];
+  UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+
+  [rootViewController.navigationController pushViewController:recordings animated:YES];
 }
 
 RCT_EXPORT_METHOD(enteredView:(NSString *)view) {
