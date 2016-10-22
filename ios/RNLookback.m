@@ -24,12 +24,12 @@ RCT_EXPORT_METHOD(startWithAppToken:(NSString *)appToken) {
 }
 
 RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
-  NSLog(@"startRecording with %@", options);
-
   NSString *userId = [RCTConvert NSString:options[@"userId"]];
-  BOOL skipPreview = [RCTConvert BOOL:options[@"skipPreview"]];
+
   BOOL cameraEnabled = [RCTConvert BOOL:options[@"cameraEnabled"]];
   BOOL microphoneEnabled = [RCTConvert BOOL:options[@"microphoneEnabled"]];
+  NSString *name = [RCTConvert NSString:options[@"name"]];
+  BOOL skipPreview = [RCTConvert BOOL:options[@"skipPreview"]];
 
   LookbackRecordingOptions *recordingOptions = [LookbackRecordingOptions new];
   recordingOptions.userIdentifier = userId;
@@ -41,7 +41,8 @@ RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
     recordingOptions.afterRecording = LookbackAfterRecordingUpload;
   }
 
-  [[Lookback sharedLookback] startRecordingWithOptions:recordingOptions];
+  LookbackRecordingSession *session = [[Lookback sharedLookback] startRecordingWithOptions:recordingOptions];
+  session.name = name;
 }
 
 RCT_EXPORT_METHOD(stopRecording) {
