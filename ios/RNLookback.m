@@ -23,29 +23,57 @@ RCT_EXPORT_METHOD(startWithAppToken:(NSString *)appToken) {
   [Lookback setupWithAppToken:appToken];
 }
 
-RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
-  NSLog(@"startRecording with %@", options);
+RCT_EXPORT_METHOD(setFeedbackBubbleVisible:(BOOL *)feedbackBubbleVisible) {
+  [Lookback sharedLookback].feedbackBubbleVisible = feedbackBubbleVisible;
+}
 
-  NSString *userId = [RCTConvert NSString:options[@"userId"]];
-  BOOL skipPreview = [RCTConvert BOOL:options[@"skipPreview"]];
+RCT_EXPORT_METHOD(setShakeToRecord:(BOOL *)shakeToRecord) {
+  [Lookback sharedLookback].shakeToRecord = shakeToRecord;
+}
+
+RCT_EXPORT_METHOD(setShowIntroductionDialogs:(BOOL *)showIntroductionDialogs) {
+  [Lookback sharedLookback].showIntroductionDialogs = showIntroductionDialogs;
+}
+
+RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
   BOOL cameraEnabled = [RCTConvert BOOL:options[@"cameraEnabled"]];
   BOOL microphoneEnabled = [RCTConvert BOOL:options[@"microphoneEnabled"]];
+  NSString *name = [RCTConvert NSString:options[@"name"]];
+  BOOL skipPreview = [RCTConvert BOOL:options[@"skipPreview"]];
+  NSString *userIdentifier = [RCTConvert NSString:options[@"userIdentifier"]];
 
   LookbackRecordingOptions *recordingOptions = [LookbackRecordingOptions new];
-  recordingOptions.userIdentifier = userId;
   recordingOptions.cameraEnabled = cameraEnabled;
   recordingOptions.microphoneEnabled = microphoneEnabled;
+  recordingOptions.userIdentifier = userIdentifier;
 
   if (skipPreview) {
     // If skipPreview is true then we upload the recording immediately.
     recordingOptions.afterRecording = LookbackAfterRecordingUpload;
   }
 
-  [[Lookback sharedLookback] startRecordingWithOptions:recordingOptions];
+  LookbackRecordingSession *session = [[Lookback sharedLookback] startRecordingWithOptions:recordingOptions];
+  session.name = name;
 }
 
 RCT_EXPORT_METHOD(stopRecording) {
   [[Lookback sharedLookback] stopRecording];
+}
+
+// NOTE(mark): This currently doesn't have a nice way of closing it. Need to add a done / back button to the view itself.
+RCT_EXPORT_METHOD(showLookbackUploads) {
+  UIViewController *recordings = [LookbackRecordingsTableViewController recordingsViewController];
+  UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+
+  [rootViewController presentViewController:recordings animated:YES completion:NULL];
+}
+
+RCT_EXPORT_METHOD(enteredView:(NSString *)view) {
+  [[Lookback sharedLookback] enteredView:view];
+}
+
+RCT_EXPORT_METHOD(exitedView:(NSString *)view) {
+  [[Lookback sharedLookback] exitedView:view];
 }
 
 @end
