@@ -6,6 +6,12 @@ React Native wrapper for [Lookback](https://lookback.io/).
 ## Setup
 
 ```
+# Yarn
+yarn add react-native-lookback
+
+OR
+
+# NPM
 npm install --save react-native-lookback
 ```
 
