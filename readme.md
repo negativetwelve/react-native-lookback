@@ -5,7 +5,7 @@ React Native wrapper for [Lookback](https://lookback.io/).
 
 ## Setup
 
-```
+```bash
 # Yarn
 yarn add react-native-lookback
 
@@ -15,41 +15,29 @@ OR
 npm install --save react-native-lookback
 ```
 
-### iOS
-
-#### react-native link
-
-```
-react-native link react-native-lookback
-```
-
-Unfortunately, after running the `react-native link` command, you will also need to add the Lookback pod by following the instructions in the Cocoapods section. I'm working on making `react-native link` a one-stop solution, PRs welcome!
-
-#### Cocoapods
+### iOS with Cocoapods
 
 Add the following to your Podfile:
 
+```ruby
+pod "react-native-lookback", path: "../node_modules/react-native-lookback"
 ```
-pod "Lookback"
-```
+
+**NOTE** You may need to change the relative path to `node_modules` depending on your project structure.
 
 Then run:
 
-```
+```bash
 pod install
 ```
 
 You're done! :tada:
 
-TODO(mark): When adding `react-native-lookback` to Cocoapods and referencing `node_modules`, the package can't find the header files for Lookback itself :( If anyone knows how to fix this, I would gladly accept your PR!
-
-#### Manual
-
-Inside your xcode project file, right click on your "Libraries" folder and select "Add files to MyApp". Navigate to `node_modules/react-native-lookback/ios/RNLookback.xcodeproj` and add that to your project. Then select your app's project file on the sidebar, scroll down to "Linked Frameworks and Libraries" and add `libRNLookback.a` to this list.
-
 ### Android
 
+```bash
 TODO(mark): Add android support.
+```
 
 ## Usage
 
