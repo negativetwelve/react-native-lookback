@@ -47,7 +47,7 @@ TODO(mark): Add android support.
 
 ## Usage
 
-```
+```js
 // Import the module:
 import Lookback from 'react-native-lookback';
 
