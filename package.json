@@ -1,6 +1,6 @@
 {
   "name": "react-native-lookback",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "React Native wrapper for Lookback.io.",
   "main": "./src/Lookback.js",
   "files": [
