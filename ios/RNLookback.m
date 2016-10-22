@@ -23,6 +23,10 @@ RCT_EXPORT_METHOD(startWithAppToken:(NSString *)appToken) {
   [Lookback setupWithAppToken:appToken];
 }
 
+RCT_EXPORT_METHOD(setFeedbackBubbleVisible:(BOOL *)feedbackBubbleVisible) {
+  [Lookback sharedLookback].feedbackBubbleVisible = feedbackBubbleVisible;
+}
+
 RCT_EXPORT_METHOD(setShakeToRecord:(BOOL *)shakeToRecord) {
   [Lookback sharedLookback].shakeToRecord = shakeToRecord;
 }
