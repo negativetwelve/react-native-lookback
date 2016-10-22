@@ -49,6 +49,10 @@ RCT_EXPORT_METHOD(stopRecording) {
   [[Lookback sharedLookback] stopRecording];
 }
 
+RCT_EXPORT_METHOD(setShakeToRecord:(BOOL *)shakeToRecord) {
+  [Lookback sharedLookback].shakeToRecord = shakeToRecord;
+}
+
 RCT_EXPORT_METHOD(enteredView:(NSString *)view) {
   [[Lookback sharedLookback] enteredView:view];
 }
