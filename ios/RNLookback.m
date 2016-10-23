@@ -40,7 +40,13 @@ RCT_EXPORT_METHOD(startRecordingWithOptions:(NSDictionary *)options) {
   BOOL microphoneEnabled = [RCTConvert BOOL:options[@"microphoneEnabled"]];
   NSString *name = [RCTConvert NSString:options[@"name"]];
   BOOL skipPreview = [RCTConvert BOOL:options[@"skipPreview"]];
-  NSString *userIdentifier = [RCTConvert NSString:options[@"userIdentifier"]];
+
+  NSString *userIdentifier = options[@"userIdentifier"];
+
+  // Coerce the userIdentifier to a string (if it was passed in as a number).
+  if ([userIdentifier isKindOfClass:[NSNumber class]]) {
+    userIdentifier = [(NSNumber *)userIdentifier stringValue];
+  }
 
   LookbackRecordingOptions *recordingOptions = [LookbackRecordingOptions new];
   recordingOptions.cameraEnabled = cameraEnabled;
