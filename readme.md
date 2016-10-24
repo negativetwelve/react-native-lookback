@@ -15,15 +15,19 @@ OR
 npm install --save react-native-lookback
 ```
 
-### iOS with Cocoapods
+### iOS with react-native and Cocoapods
 
-Add the following to your Podfile:
+Run the following:
 
-```ruby
-pod "react-native-lookback", path: "../node_modules/react-native-lookback"
+```bash
+react-native link react-native-lookback
 ```
 
-**NOTE** You may need to change the relative path to `node_modules` depending on your project structure.
+Then, add the following to your Podfile:
+
+```ruby
+pod "LookbackSafe", "~> 1.4.1"
+```
 
 Then run:
 
@@ -33,11 +37,11 @@ pod install
 
 You're done! :tada:
 
+**NOTE:** I'm working on using the podspec within this project to automatically link the LookbackSafe framework. Currently talking with the Lookback team to support this use case!
+
 ### Android
 
-```bash
-TODO(mark): Add android support.
-```
+Coming soon!
 
 ## Usage
 
