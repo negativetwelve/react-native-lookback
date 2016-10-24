@@ -72,7 +72,7 @@
 			dependencies = (
 			);
 			name = RNLookback;
-			productName = RNIntercom;
+			productName = RNLookback;
 			productReference = 112EE36D1CC0AB8A00BF6BB8 /* libRNLookback.a */;
 			productType = "com.apple.product-type.library.static";
 		};
