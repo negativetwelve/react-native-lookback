@@ -50,7 +50,7 @@ Coming soon!
 import Lookback from 'react-native-lookback';
 
 // Initialize using your appToken.
-Lookback.setupWithAppToken(token);
+Lookback.startWithAppToken(token);
 
 // Start Recording
 Lookback.startRecordingWithOptions({
