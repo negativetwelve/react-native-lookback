@@ -7,8 +7,8 @@
 //
 
 
-#import "RCTBridgeModule.h"
-#import "RCTConvert.h"
+#import "React/RCTBridgeModule.h"
+#import "React/RCTConvert.h"
 
 
 @interface RNLookback : NSObject <RCTBridgeModule>
