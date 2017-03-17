@@ -81,9 +81,9 @@ Lookback.enteredView('my-view');
 // Track exiting a custom view.
 Lookback.exitedView('my-view');
 
-// Check if Lookback is recording
+// Check if Lookback is recording.
 Lookback.getIsRecording().then((isRecording) => {
-  // isRecording is true if lookback is recording, false if not
+  // isRecording is true if lookback is recording, false if not.
 });
 ```
 
