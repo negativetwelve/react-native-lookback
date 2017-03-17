@@ -82,4 +82,9 @@ RCT_EXPORT_METHOD(exitedView:(NSString *)view) {
   [[Lookback sharedLookback] exitedView:view];
 }
 
+// check if lookback is recording
+RCT_REMAP_METHOD(getIsRecording, resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+  resolve([NSNumber numberWithBool:[[Lookback sharedLookback] isRecording]]);
+}
+
 @end

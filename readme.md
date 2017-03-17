@@ -79,7 +79,12 @@ Lookback.showLookbackUploads();
 Lookback.enteredView('my-view');
 
 // Track exiting a custom view.
-Lookbac.exitedView('my-view');
+Lookback.exitedView('my-view');
+
+// Check if Lookback is recording
+Lookback.getIsRecording().then((isRecording) => {
+  // isRecording is true if lookback is recording, false if not
+});
 ```
 
 If a method is missing from the official SDK, please send a PR!
