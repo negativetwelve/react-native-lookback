@@ -2,16 +2,17 @@
   "name": "react-native-lookback",
   "version": "1.3.1",
   "description": "React Native wrapper for Lookback.io.",
-  "main": "./src/Lookback.js",
+  "main": "./build/Lookback.js",
   "files": [
-    "src",
+    "build",
     "ios",
     "react-native-lookback.podspec"
   ],
   "keywords": [
-    "react-native",
+    "ios",
+    "jolt",
     "lookback",
-    "ios"
+    "react-native"
   ],
   "author": "Mark Miyashita <negativetwelve@gmail.com> (https://github.com/negativetwelve)",
   "contributors": [
@@ -29,8 +30,27 @@
     "url": "https://github.com/negativetwelve/react-native-lookback/issues"
   },
   "homepage": "https://github.com/negativetwelve/react-native-lookback",
-  "engines": {
+  "engines": {},
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^20.0.0",
+    "babel-preset-jolt": "^1.0.0",
+    "eslint-config-jolt": "^1.0.2",
+    "jest": "^20.0.0"
   },
-  "dependencies": {
+  "babel": {
+    "presets": [
+      "jolt"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "jolt"
+  },
+  "scripts": {
+    "build": "babel js --out-dir build --ignore '**/*.spec.js'",
+    "lint": "eslint js",
+    "prepublishOnly": "yarn build",
+    "test": "jest"
   }
 }
