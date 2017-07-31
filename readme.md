@@ -1,7 +1,11 @@
 # react-native-lookback
 
-React Native wrapper for [Lookback](https://lookback.io/).
+[![npm](https://img.shields.io/npm/v/react-native-lookback.svg)](https://www.npmjs.com/package/react-native-lookback)
+[![npm](https://img.shields.io/npm/dt/react-native-lookback.svg)](https://www.npmjs.com/package/react-native-lookback)
+[![npm](https://img.shields.io/npm/l/react-native-lookback.svg)](https://github.com/negativetwelve/react-native-lookback/blob/master/LICENSE)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/negativetwelve/react-native-lookback/master.svg)](https://circleci.com/gh/negativetwelve/react-native-lookback)
 
+React Native wrapper for [Lookback](https://lookback.io/).
 
 ## Setup
 
