@@ -2,10 +2,10 @@
   "name": "react-native-lookback",
   "version": "1.4.0",
   "description": "React Native wrapper for Lookback.io.",
-  "main": "./build/Lookback.js",
+  "main": "./js/Lookback.js",
   "files": [
-    "build",
     "ios",
+    "js",
     "react-native-lookback.podspec"
   ],
   "keywords": [
@@ -33,24 +33,13 @@
   "engines": {},
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-jest": "^20.0.0",
-    "babel-preset-jolt": "^1.0.0",
-    "eslint-config-jolt": "^1.0.2",
-    "jest": "^20.0.0"
-  },
-  "babel": {
-    "presets": [
-      "jolt"
-    ]
+    "eslint-config-jolt": "^1.0.2"
   },
   "eslintConfig": {
     "extends": "jolt"
   },
   "scripts": {
-    "build": "babel js --out-dir build --ignore '**/*.spec.js'",
     "lint": "eslint js",
-    "prepublishOnly": "yarn build",
-    "test": "jest"
+    "test": "echo 'No Tests'"
   }
 }
