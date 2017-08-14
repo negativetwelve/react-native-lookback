@@ -31,10 +31,14 @@
   },
   "homepage": "https://github.com/negativetwelve/react-native-lookback",
   "engines": {},
-  "dependencies": {},
+  "dependencies": {
+    "react-native-package": "^1.1.0"
+  },
   "devDependencies": {
     "eslint-config-jolt": "^1.0.2",
-    "jest-preset-jolt": "^1.0.1"
+    "jest-preset-jolt": "^1.0.1",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.47.1"
   },
   "eslintConfig": {
     "extends": "jolt"
