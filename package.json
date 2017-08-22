@@ -19,7 +19,7 @@
     "react-native-lookback.podspec"
   ],
   "dependencies": {
-    "react-native-package": "^2.2.0"
+    "react-native-package": "^2.4.1"
   },
   "devDependencies": {
     "eslint-config-jolt": "^1.0.2",
