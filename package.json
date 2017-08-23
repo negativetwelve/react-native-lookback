@@ -1,6 +1,6 @@
 {
   "name": "react-native-lookback",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "React Native wrapper for Lookback.io.",
   "license": "MIT",
   "author": "Mark Miyashita <negativetwelve@gmail.com>",
