@@ -7,23 +7,17 @@
 
 React Native wrapper for [Lookback](https://lookback.io/).
 
-## Setup
+## Getting Started
 
-```bash
-# Yarn
+```shell
 yarn add react-native-lookback
-
-OR
-
-# NPM
-npm install --save react-native-lookback
 ```
 
 ### iOS with react-native and Cocoapods
 
 Run the following:
 
-```bash
+```shell
 react-native link react-native-lookback
 ```
 
@@ -35,7 +29,7 @@ pod "LookbackSafe", "~> 1.4.1"
 
 Then run:
 
-```bash
+```shell
 pod install
 ```
 
@@ -45,11 +39,11 @@ You're done! :tada:
 
 ### Android
 
-Coming soon!
+PRs welcome!
 
 ## Usage
 
-```js
+```javascript
 // Import the module:
 import Lookback from 'react-native-lookback';
 
